@@ -1,0 +1,71 @@
+//Mariana Ribeiro da Silva
+/* Faça um algoritmo que leia o código do produto e a quantidade que
+o cliente deseja comprar.
+O cliente pode comprar mais de um produto, pergunte se ele deseja continuar comprando.
+Calcule o valor total a ser pago por cada produto e o valor total da compra*/
+import java.util.Scanner;
+
+public class Exercicio9 {
+    public static void main(String[] args) {
+        Scanner Entrada = new Scanner(System.in);
+
+        int codigo, quantidade;
+        double preco = 0, totalProduto, totalCompra = 0;
+        String nomeProduto = " ";
+        String continuar;
+
+        do {
+            System.out.println("===== CARDÁPIO =====");
+            System.out.println("1 - Cachorro Quente | R$ 10.00");
+            System.out.println("2 - Hambúrguer      | R$ 15.00");
+            System.out.println("3 - Refrigerante    | R$ 8.00");
+            System.out.println("4 - Batata Frita    | R$ 12.00");
+            System.out.println("====================");
+
+            System.out.print("Digite o código do produto: ");
+            codigo = Entrada.nextInt();
+
+            System.out.print("Digite a quantidade: ");
+            quantidade = Entrada.nextInt();
+
+            switch (codigo) {
+                case 1:
+                    nomeProduto = "Cachorro Quente";
+                    preco = 10.0;
+                    break;
+                case 2:
+                    nomeProduto = "Hambúrguer";
+                    preco = 15.0;
+                    break;
+                case 3:
+                    nomeProduto = "Refrigerante";
+                    preco = 8.0;
+                    break;
+                case 4:
+                    nomeProduto = "Batata Frita";
+                    preco = 12.0;
+                    break;
+                default:
+                    System.out.println("Código inválido!");
+                    nomeProduto = "Desconhecido";
+                    preco = 0;
+            }
+
+            totalProduto = preco * quantidade;
+
+            System.out.println("Produto: " + codigo + " - " + nomeProduto);
+            System.out.println("Total do produto: R$ " + totalProduto);
+            System.out.println("-------------------------");
+
+            totalCompra += totalProduto;
+
+            System.out.print("Deseja continuar comprando? (s/n): ");
+            continuar = Entrada.next();
+
+        } while (continuar.equalsIgnoreCase("s"));
+
+        System.out.println("Total da compra: R$ " + totalCompra);
+
+        Entrada.close();
+    }
+}
