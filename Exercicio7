@@ -1,0 +1,36 @@
+//Mariana Ribeiro da Silva
+/*O IMC (índice de Massa Corporal) é uma medida do grau de obesidade 	de uma pessoa.
+Faça um algoritmo que leia a altura e o peso de 10 pessoas.
+Calcular o IMC de cada pessoa e verificar quantas pessoas estão 
+com o IMC entre 18,5 e 24,9 que é considerado sem obesidade.
+ */
+import java.util.Scanner;
+
+public class Exercicio7 {
+    public static void main(String[] args) {
+        Scanner Entrada = new Scanner(System.in);
+
+        double peso, altura, imc;
+        int pessoasSaudaveis = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Pessoa " + i);
+
+            System.out.print("Digite o peso (kg): ");
+            peso = Entrada.nextDouble();
+
+            System.out.print("Digite a altura (m): ");
+            altura = Entrada.nextDouble();
+
+            imc = peso / (altura * altura);
+
+            if (imc >= 18.5 && imc <= 24.9) {
+                pessoasSaudaveis++;
+            }
+        }
+
+        System.out.println("Quantidade de pessoas com IMC normal: " + pessoasSaudaveis);
+
+        Entrada.close();
+    }
+}
