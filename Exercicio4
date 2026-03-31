@@ -1,0 +1,13 @@
+//Mariana Ribeiro da Silva 
+/*Construir um algoritmo que leia um número inteiro e imprime o Exemplo da sequência:
+1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024. . .
+enquanto o valor da sequência for menor ou igual ao número lido.
+ */
+public class Exercicio4{
+    public static void main(String[] args) {
+        for(int i=10; i <= 20; i++){
+            double metade = i / 2.0;
+            System.out.println("A metade de " + i + " é " + metade);
+
+        }
+    }
